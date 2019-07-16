@@ -26,7 +26,7 @@ public class EnigmaText : MonoBehaviour {
 	char[] alphabet = new char[26];
 	#endregion
 
-	#region Public Methods
+	#region Component Methods
 	// Use this for initialization
 	void Start() {
 		int ascii = 97;
@@ -60,8 +60,6 @@ public class EnigmaText : MonoBehaviour {
 		float valueRight = InputCallback.info[1];
 		int deltaLeft = Mathf.Abs(Mathf.RoundToInt((valueLeft * maxSetting)));
 		int deltaRight = Mathf.Abs(Mathf.RoundToInt((valueRight * maxSetting)));
-		Debug.Log("CorrectSettingLeft: " + valueLeft);
-		Debug.Log("CorrectSettingRight: " + valueRight);
 		currentSettingLeft = Mathf.Clamp(deltaLeft, minSetting, maxSetting);
 		//Debug.Log("Left Enigma Dialer: " + currentSettingLeft);
 		//Debug.Log("Right Enigma Dialer: " + currentSettingRight);

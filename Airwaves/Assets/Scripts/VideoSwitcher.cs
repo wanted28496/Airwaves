@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
+
+/// <summary>
+/// Class that handles level with more than 1 video players and switches between them
+/// </summary>
 public class VideoSwitcher : MonoBehaviour {
 	[SerializeField] private VideoPlayer vidp;
 	// Start is called before the first frame update

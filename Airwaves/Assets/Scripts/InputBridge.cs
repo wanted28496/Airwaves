@@ -5,6 +5,7 @@ using System.IO.Ports;
 
 public class InputBridge : MonoBehaviour {
 	public string portName;
+	
 	[SerializeField] private SerialPort serial;
 	[SerializeField] private string buf;
 	// Start is called before the first frame update

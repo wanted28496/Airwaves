@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ImageSpin : MonoBehaviour {
-	[SerializeField] private float rotationSpeed = 0.01f;
 
+	#region Private Variables
+
+	[SerializeField] private float rotationSpeed = 0.01f;
 	private Vector3 newRot;
+
+	#endregion
+
+	#region Component Methods
 
 	// Start is called before the first frame update
 	void Start() {
@@ -19,4 +25,5 @@ public class ImageSpin : MonoBehaviour {
 
 		this.GetComponent<RectTransform>().localRotation = Quaternion.Euler(newRot);
 	}
+	#endregion
 }

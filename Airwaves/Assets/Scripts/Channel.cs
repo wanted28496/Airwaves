@@ -34,6 +34,8 @@ public class Channel : MonoBehaviour {
 	private GameObject stat;
 	#endregion
 
+
+	#region Component Methods
 	// Use this for initialization
 	void Start() {
 
@@ -58,8 +60,17 @@ public class Channel : MonoBehaviour {
 		AntennaeManager.OnChange -= calculateOpacity;
 	}
 
+	#endregion
+
+
+	#region Private Helper Method
+
+
+	/// <summary>
+	/// Calculates the visibilites of each channel and changes alpha values based on channel position
+	/// </summary>
 	void calculateOpacity() {
-		//Using Vector 2 Values
+		//Using Vector 2 Values for antena or XBox controller
 		//Vector2 antLeft = antm.LeftPos;
 		//Vector2 antRight = antm.RightPos;
 
@@ -70,7 +81,7 @@ public class Channel : MonoBehaviour {
 		//float totalLDiff = Mathf.Abs(LDiff.x) + Mathf.Abs(LDiff.y);
 		//float diffPercent = 0;
 
-		//Using FLoat Values
+		//Using FLoat Values for potentiometer Dialers
 		float antenaLeft = antm.leftPos;
 		float antenaRight = antm.rightPos;
 
@@ -104,6 +115,11 @@ public class Channel : MonoBehaviour {
 			//stat.GetComponent<AudioSource>().volume = diff;
 		}
 
+		if (diffPercent < 1.0f) {
+			stat.GetComponent<AudioSource>().volume = 1.0f - diffPercent;
+		}
+
+		/// Handling the Video Aspect of channel
 		if (video) {
 			vidp.Play();
 			vidp.targetCameraAlpha = diffPercent;
@@ -112,7 +128,7 @@ public class Channel : MonoBehaviour {
 			} else {
 				vidp.GetComponent<AudioSource>().volume = diffPercent;
 			}
-		} else {
+		} else {	/// Handling Image aspect of Channel
 			Color newCol = img.color;
 			if (diffPercent > 0.25f) {
 				newCol.a = diffPercent;
@@ -128,12 +144,13 @@ public class Channel : MonoBehaviour {
 			img.color = newCol;
 		}
 
+		/// Handles the text aspects of channel
 		if (text && diffPercent > 0.25f) {
 			if (sideB == CSVManager.SideBType.r) {
 				SideB.russia = true;
-				Debug.Log("America: " + SideB.america);
-				Debug.Log("Cuba: " + SideB.cuba);
-				Debug.Log("Russia: " + SideB.russia);
+				//Debug.Log("America: " + SideB.america);
+				//Debug.Log("Cuba: " + SideB.cuba);
+				//Debug.Log("Russia: " + SideB.russia);
 			}
 			childText.enabled = true;
 			Color newCol = childText.color;
@@ -145,4 +162,5 @@ public class Channel : MonoBehaviour {
 			enigmaInput.enabled = false;
 		}
 	}
+	#endregion
 }

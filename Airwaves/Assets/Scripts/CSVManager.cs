@@ -8,11 +8,17 @@ using UnityEngine.Video;
 
 public class CSVManager : MonoBehaviour {
 
+	#region Public Variables
+
 	public TextAsset levelData;
-	[SerializeField]
-	public List<GameObject> channelsGameObject;
+	[SerializeField] public List<GameObject> channelsGameObject;
 	public static int[][] code;
 	public Telephone telephone;
+
+	#endregion
+
+	#region Private Variables
+
 	private List<int> correctCodes;
 	private char lineSeprator = '\n';
 	private char fieldSeperator = ',';
@@ -24,6 +30,10 @@ public class CSVManager : MonoBehaviour {
 	private string telephoneNo;
 	private string telephoneAsset;
 	[SerializeField] private Text codeText;
+
+	#endregion
+
+	#region Component Methods
 
 	// Start is called before the first frame update
 	void Awake() {
@@ -47,6 +57,11 @@ public class CSVManager : MonoBehaviour {
 		SceneManager.sceneLoaded -= OnLevelFinishLoading;
 	}
 
+	/// <summary>
+	/// Event Callback once the scene is loaded
+	/// </summary>
+	/// <param name="scene"> Scene Assigned from the event </param>
+	/// <param name="mode"> Mode assigned from the event </param>
 	public void OnLevelFinishLoading(Scene scene, LoadSceneMode mode) {
 		CodeChecker.currentCode = "";
 		codeText.text = "____";
@@ -54,11 +69,38 @@ public class CSVManager : MonoBehaviour {
 		//ChangeLevel(1);
 	}
 
+	#endregion
+
+	#region Public Helper Methods
 
 	public void ChangeCodeText() {
 		codeText.text = "____";
 	}
 
+	public void ChangeLevel(int levelNumber) {
+		foreach (var obj in channelsGameObject) {
+			obj.SetActive(false);
+		}
+
+		List<GameObject> channelData = updateChannelData(levelNumber);
+
+		int length = channelData.Count;
+
+		for (int i = 0; i < length; i++) {
+			channelsGameObject[i] = channelData[i];
+			channelsGameObject[i].SetActive(true);
+		}
+
+	}
+
+	#endregion
+
+
+	#region Private Helper Methods
+
+	/// <summary>
+	/// Read the data from the CSV file for code values
+	/// </summary>
 	private void ReadData() {
 		string[] levelDatas = levelData.text.Split(lineSeprator);
 		int lineCount = 0;
@@ -89,11 +131,9 @@ public class CSVManager : MonoBehaviour {
 		//ChangeLevel(1);
 	}
 
-	//private void getChannelData(string[] fields, ChannelType type, out Channel channel) {
-	//	Channel c = new Channel();
-
-	//}
-
+	/// <summary>
+	/// assigns correct codes to list in CodeChecker.cs
+	/// </summary>
 	private void UpdateCodes() {
 		foreach (var levelCode in code) {
 			int correctLevelCode = 0;
@@ -106,6 +146,12 @@ public class CSVManager : MonoBehaviour {
 		CodeChecker.finalLevel = CodeChecker.correctCode.Count - 1;
 	}
 
+
+	/// <summary>
+	/// Reads the CSV file to assign the Channel data to the channel object depending upon the level
+	/// </summary>
+	/// <param name="levelNumber">The level for which data is needed</param>
+	/// <returns>Returns the list of new channel game objects including channel data</returns>
 	public List<GameObject> updateChannelData(int levelNumber) {
 		Telephone.telephoneDirectory.Clear();
 		Resources.UnloadUnusedAssets();
@@ -154,12 +200,14 @@ public class CSVManager : MonoBehaviour {
 				telephoneAsset = null;
 			}
 
+			///Creating new Channel object and reseting everything
 			Channel c = channelsGameObject[channelNo].GetComponent<Channel>();
 			c.img.enabled = false;
 			c.vidp.enabled = false;
 			c.aud.enabled = false;
 			c.video = false;
 			string channelType = fields[2].ToString();
+			/// Handles video related fields
 			if (channelType == "Video") {
 				c.channelType = ChannelType.Video;
 				c.vidp.enabled = true;
@@ -168,7 +216,7 @@ public class CSVManager : MonoBehaviour {
 				c.vidp.isLooping = true;
 				c.aud.clip = Resources.Load<AudioClip>(extraAsset);
 				c.video = true;
-			} else if (channelType == "Text") {
+			} else if (channelType == "Text") { /// Handles text related fields
 				c.channelType = ChannelType.Text;
 				c.img.sprite = Resources.Load<Sprite>(asset);
 				TextAsset textFile = Resources.Load<TextAsset>(extraAsset);
@@ -184,6 +232,7 @@ public class CSVManager : MonoBehaviour {
 				float.TryParse(fields[17].ToString(), out B);
 				c.childText.color = new Color(R, G, B);
 				c.enigmaInput.maxSetting = 10;
+				///TODO::Randomized the correct value for left and right input
 				//c.childText.enabled = true;
 				//c.child.transform.
 			} else {
@@ -191,6 +240,7 @@ public class CSVManager : MonoBehaviour {
 				c.img.enabled = true;
 				c.img.sprite = Resources.Load<Sprite>(asset);
 			}
+			///Makes flags if the channel is Side B channel
 			string sideB = fields[18].ToString();
 			if (sideB.Contains("NULL")) {
 				c.sideB = SideBType.n;
@@ -247,21 +297,7 @@ public class CSVManager : MonoBehaviour {
 		return channelListGameObjects;
 	}
 
-	public void ChangeLevel(int levelNumber) {
-		foreach (var obj in channelsGameObject) {
-			obj.SetActive(false);
-		}
-
-		List<GameObject> channelData = updateChannelData(levelNumber);
-
-		int length = channelData.Count;
-
-		for (int i = 0; i < length; i++) {
-			channelsGameObject[i] = channelData[i];
-			channelsGameObject[i].SetActive(true);
-		}
-
-	}
+	#endregion
 
 
 	public enum ChannelType {
@@ -271,10 +307,32 @@ public class CSVManager : MonoBehaviour {
 	}
 
 	public enum SideBType {
-		a,
-		c,
-		r,
-		n,
+		a,/// America Side B Flag
+		c,/// Cuba Side B Flag
+		r,/// Russia Side B Flag
+		n,/// Not a Side B Flag
 	}
 
+
+	/// Fields list Summary
+	/// [0] level number
+	/// [1] Channel No
+	/// [2] Channel Type
+	/// [3] Channel Main Assest Location (Image or Video)
+	/// [4] Channel Extra Assest Location (Text or Audio)
+	/// [5] Telephone Number
+	/// [6] Telephone Audio Location
+	/// [7] Boolean value whether the channel contain code or not
+	/// [8] Code value if it has code
+	/// [9] Code location from 1 to 4
+	/// [10] Right X value if using Vector 2 or right value if using float
+	/// [11] Right Y value if using Vector 2 or left value if using float
+	/// [12] Left X value if using Vector 2, not used in float
+	/// [13] Left Y value if using Vector 2, not used in float
+	/// [14] Width of Child Text field
+	/// [15] Height of Child text field
+	/// [16] font size of child text
+	/// [17] R value of the child text color
+	/// [18] G value of the child text color
+	/// [19] B value of the child text color
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -33,6 +33,7 @@ public class CodeCheckerFinal : MonoBehaviour {
 	/// </summary>
 	private void CheckForInput() {
 		int result;
+		/// To remove last digit from code
 		if (Input.GetKeyDown(KeyCode.KeypadPeriod)) {
 			if (currentCode.Length != 0) {
 				currentCode = currentCode.TrimEnd(currentCode[currentCode.Length - 1]);
@@ -51,8 +52,7 @@ public class CodeCheckerFinal : MonoBehaviour {
 					int codeInt;
 					int.TryParse(currentCode, out codeInt);
 					if (codeInt == correctCode) {
-						//TODO:: Change to call the update level function in level manager script
-						//Ring The Phone and Play Outro and Intro
+						//Ring The Phone and Play Outro and end the game
 						telephone.RingBeforeOutro();
 						currentCode = "____";
 						this.gameObject.GetComponent<Text>().text = currentCode;

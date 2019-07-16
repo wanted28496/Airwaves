@@ -5,7 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class ArcadeDemo : MonoBehaviour {
 
-	float lastLeftInput, lastRightInput, lastELeftInput, lastERightInput;
+	#region Private Variables
+
+	private float lastLeftInput;
+	private float lastRightInput;
+	private float lastELeftInput;
+	private float lastERightInput;
+
+	#endregion
+
+	#region Component Methods
 
 	// Use this for initialization
 	void Start() {
@@ -44,4 +53,5 @@ public class ArcadeDemo : MonoBehaviour {
 		lastLeftInput = InputCallback.info[2];
 		lastRightInput = InputCallback.info[3];
 	}
+	#endregion
 }

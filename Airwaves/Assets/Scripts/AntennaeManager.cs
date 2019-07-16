@@ -35,7 +35,7 @@ public class AntennaeManager : MonoBehaviour {
 
 	#endregion
 
-	#region Serialized Variables
+	#region Private Serialized Variables
 	[SerializeField] private Vector2 leftCurrentPos = new Vector2(0, 0);
 	[SerializeField] private Vector2 rightCurrentPos = new Vector2(0, 0);
 	[SerializeField] private float leftCurrentValue = 0;
@@ -67,6 +67,9 @@ public class AntennaeManager : MonoBehaviour {
 					OnChange();
 				}
 			}
+
+			///Uncomment when using XBox controllers
+
 			//if (Input.GetAxisRaw("RightX") != 0 || Input.GetAxisRaw("RightY") != 0) {
 			//	Vector2 pos = new Vector2(Input.GetAxisRaw("RightX"), Input.GetAxisRaw("RightY"));
 			//	//Debug.Log("position: " + pos);

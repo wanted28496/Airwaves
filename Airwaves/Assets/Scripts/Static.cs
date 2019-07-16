@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class Static : MonoBehaviour {
 
+	#region Private variable
+
 	[SerializeField] private int pixWidth;
 	[SerializeField] private int pixHeight;
 
@@ -21,10 +23,12 @@ public class Static : MonoBehaviour {
 	private Color[] pix;
 	private Image img;
 	private AudioSource source;
+	#endregion
 
 	public List<Channel> channelObject = new List<Channel>();
 	public List<ChannelFinal> finaleObjects = new List<ChannelFinal>();
 
+	#region Component Methods
 	// Use this for initialization
 	void Start() {
 		img = GetComponent<Image>();
@@ -35,7 +39,26 @@ public class Static : MonoBehaviour {
 
 	}
 
-	void CalcNoise() {
+	// Update is called once per frame
+	void Update() {
+		scale = Random.Range(scaleMin, scaleMax);
+		CalcNoise();
+		source.volume = GetMaxOpacity();
+		if (Input.GetKeyDown(KeyCode.W)) {
+			SceneManager.LoadScene(2);
+		}
+
+	}
+
+	#endregion
+
+
+	#region Private Helper Functions
+
+	/// <summary>
+	/// Creates the static Sound effect on the screen
+	/// </summary>
+	private void CalcNoise() {
 		// For each pixel in the texture...
 		float y = 0.0F;
 
@@ -56,18 +79,10 @@ public class Static : MonoBehaviour {
 		noiseTex.Apply();
 	}
 
-
-	// Update is called once per frame
-	void Update() {
-		scale = Random.Range(scaleMin, scaleMax);
-		CalcNoise();
-		source.volume = GetMaxOpacity();
-		if (Input.GetKeyDown(KeyCode.W)) {
-			SceneManager.LoadScene(2);
-		}
-
-	}
-
+	/// <summary>
+	/// Used to check which channel is on screen and returns the alpha value of that screen
+	/// </summary>
+	/// <returns></returns>
 	private float GetMaxOpacity() {
 		float max = 1;
 
@@ -90,4 +105,5 @@ public class Static : MonoBehaviour {
 		}
 		return max;
 	}
+	#endregion
 }

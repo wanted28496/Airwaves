@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,15 +8,25 @@ using TMPro;
 
 public class CodeChecker : MonoBehaviour {
 
-	private List<int> numbers = new List<int>();
+	#region Public Variables
+
 	public static string currentCode = "____";
-	private int maxTries = 3;
-	private int attempts = 0;
 	[SerializeField] public static List<int> correctCode;
 	[SerializeField] public static int level;
 	[SerializeField] public static int finalLevel = 0;
 	public CSVManager csv;
 	public Telephone telephone;
+
+	#endregion
+
+	#region Private Variables
+	private List<int> numbers = new List<int>();
+	private int maxTries = 3;
+	private int attempts = 0;
+	#endregion
+
+	#region Component Methods
+
 	// Use this for initialization
 	void Start() {
 
@@ -40,6 +50,9 @@ public class CodeChecker : MonoBehaviour {
 		CheckForInput();
 	}
 
+	#endregion
+
+	#region Private Helper Methods
 
 	/// <summary>
 	/// Checks the code input from the user and leads it to next level
@@ -64,11 +77,10 @@ public class CodeChecker : MonoBehaviour {
 					int codeInt;
 					int.TryParse(currentCode, out codeInt);
 					if (codeInt == correctCode[level]) {
-						//TODO:: Change to call the update level function in level manager script
 						if (level < finalLevel - 1) {
 							level++;
 							string sceneName = string.Format("Level{0}", level + 1);
-							//Ring The Phone and Play Outro and Intro
+							//Ring The Phone and Play Outro and Intro and changes level
 							telephone.RingBeforeOutro(level);
 							//csv.ChangeLevel(level + 1);
 							currentCode = "____";
@@ -95,4 +107,6 @@ public class CodeChecker : MonoBehaviour {
 		}
 		//}
 	}
+
+	#endregion
 }

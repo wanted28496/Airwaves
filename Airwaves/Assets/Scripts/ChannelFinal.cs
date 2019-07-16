@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using TMPro;
 
+/// <summary>
+/// Used only for finale level
+/// </summary>
 public class ChannelFinal : MonoBehaviour {
 
 	#region Public Varaibles
@@ -33,6 +36,8 @@ public class ChannelFinal : MonoBehaviour {
 	private GameObject stat;
 	#endregion
 
+
+	#region Component Methods
 	// Use this for initialization
 	void Start() {
 
@@ -54,9 +59,13 @@ public class ChannelFinal : MonoBehaviour {
 	private void OnDisable() {
 		AntennaeManager.OnChange -= calculateOpacity;
 	}
+	#endregion
 
+	/// <summary>
+	/// Calculates the visibilites of each channel and changes alpha values based on channel position
+	/// </summary>
 	void calculateOpacity() {
-		//Using Vector 2 Values
+		//Using Vector 2 Values for antena or XBox controller
 		//Vector2 antLeft = antm.LeftPos;
 		//Vector2 antRight = antm.RightPos;
 
@@ -67,7 +76,7 @@ public class ChannelFinal : MonoBehaviour {
 		//float totalLDiff = Mathf.Abs(LDiff.x) + Mathf.Abs(LDiff.y);
 		//float diffPercent = 0;
 
-		//Using FLoat Values
+		//Using FLoat Values for potentiometer Dialers
 		float antenaLeft = antm.leftPos;
 		float antenaRight = antm.rightPos;
 
@@ -99,6 +108,7 @@ public class ChannelFinal : MonoBehaviour {
 			//stat.GetComponent<AudioSource>().volume = diff;
 		}
 
+		/// Handling the Video Aspect of channel
 		if (video) {
 			vidp.Play();
 			vidp.targetCameraAlpha = diffPercent;
@@ -107,8 +117,8 @@ public class ChannelFinal : MonoBehaviour {
 			} else {
 				vidp.GetComponent<AudioSource>().volume = diffPercent;
 			}
-		} else {
-			Image[] allImages = this.GetComponentsInChildren<Image>();
+		} else { /// Handling Image aspect of Channel
+			Image[] allImages = this.GetComponentsInChildren<Image>(); /// mainly used for 1st channel as it has more than 1 image
 			Color newCol = img.color;
 			if (diffPercent > 0.25f) {
 				newCol.a = diffPercent;
@@ -125,6 +135,8 @@ public class ChannelFinal : MonoBehaviour {
 		if (diffPercent < 1.0f) {
 			stat.GetComponent<AudioSource>().volume = 1.0f - diffPercent;
 		}
+
+		/// Handles the text aspects of channel
 		if (text && diffPercent > 0.25f) {
 			childText.enabled = true;
 			Color newCol = childText.color;
@@ -136,6 +148,7 @@ public class ChannelFinal : MonoBehaviour {
 			enigmaInput.enabled = false;
 		}
 
+		/// Used for finding which channel is active on screen for the Outro Sound
 		if (diffPercent > 0.5f) {
 			Extras.activeChannel = channelNo;
 		}

@@ -6,9 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Countdown : MonoBehaviour {
 
+	#region Private Serialized Variables
 	[SerializeField] private float timer = 10f;
 	[SerializeField] private Text countdownText;
+	#endregion
 
+	#region Component Methods
 	// Use this for initialization
 	void Start() {
 		countdownText = this.gameObject.GetComponent<Text>();
@@ -24,4 +27,5 @@ public class Countdown : MonoBehaviour {
 			SceneManager.LoadScene(1);
 		}
 	}
+	#endregion
 }
