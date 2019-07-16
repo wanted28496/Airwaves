@@ -283,7 +283,9 @@ public class TelephoneFinal : MonoBehaviour {
 	}
 	#endregion
 
-
+	/// <summary>
+	/// Phone enum types for finale level
+	/// </summary>
 	public enum phoneTypesFinal {
 		OutroRinging = 1,
 		Outro = 2,
@@ -293,6 +295,12 @@ public class TelephoneFinal : MonoBehaviour {
 		gameEnd = 64,
 	};
 
+	/// <summary>
+	/// Enum for sprite changes 
+	/// changeSprite means you have already changed the sprite
+	/// changeToDefault means sprite can now change to default
+	/// canChange means timer's up and it is back to default
+	/// </summary>
 	public enum IsSpriteChangeAble {
 		changeSprite,
 		changeToDefault,

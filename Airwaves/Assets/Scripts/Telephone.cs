@@ -5,26 +5,34 @@ using UnityEngine.UI;
 
 public class Telephone : MonoBehaviour {
 
+	#region Public Variables
 
-	private string currentCode = "";
 	public static string ioAudioFileName = "Audio/Level";
 	public Text telephone;
 	public static Dictionary<string, AudioClip> telephoneDirectory = new Dictionary<string, AudioClip>();
 	public AudioSource audioSource;
 	public AudioSource staticComponentAudioSource;
 	public static phoneTypes presentType = phoneTypes.End;
+	public CSVManager csv;
+
+	#endregion
+
+	#region Private Variables
+
+	private string currentCode = "";
 	private int index;
 	private AudioClip wrongAudio;
 	private static AudioClip ringAudio;
 	private int level = 0;
-	public CSVManager csv;
-	// Start is called before the first frame update
 
+	#endregion
 
-	//public AudioClip GetIntroAudioClip() {
-	//return Resources.Load<AudioClip>(introAudioFileName + levelNumber.ToString());
-	//}
+	#region Public Helper Functions
 
+	/// <summary>
+	/// Rings the phone before intro and assigns the intro audio clip based on the level number
+	/// </summary>
+	/// <param name="levelNumber"> level number </param>
 	public void RingBeforeIntro(int levelNumber) {
 
 		level = levelNumber;
@@ -38,12 +46,19 @@ public class Telephone : MonoBehaviour {
 		presentType = phoneTypes.IntroRinging;
 	}
 
+	/// <summary>
+	/// Stop the audio and starts static sound
+	/// </summary>
 	private void StopAudio() {
 		audioSource.Stop();
 		audioSource.loop = false;
 		staticComponentAudioSource.volume = 1.0f;
 	}
 
+	/// <summary>
+	/// Rings the phone before outro and assigns the intro audio clip based on the level number
+	/// </summary>
+	/// <param name="levelNumber"> level number</param>
 	public void RingBeforeOutro(int levelNumber) {
 		//Playing Ringing Sound
 		//Getting Ring Audio
@@ -56,6 +71,9 @@ public class Telephone : MonoBehaviour {
 
 	}
 
+	/// <summary>
+	/// Play the intro sound
+	/// </summary>
 	public void PlayIntro() {
 		////Play Intro Sound
 		CodeChecker.level = level;
@@ -65,12 +83,20 @@ public class Telephone : MonoBehaviour {
 		presentType = phoneTypes.Intro;
 	}
 
+
+	/// <summary>
+	/// play the Outro Sound
+	/// </summary>
 	public void PlayOutro() {
 		////Playing Outro Sound
 		string audiuoFileName = ioAudioFileName + level.ToString() + "Outro";
 		audioSource.PlayOneShot(Resources.Load<AudioClip>(audiuoFileName));
 		presentType = phoneTypes.Outro;
 	}
+
+	#endregion
+
+	#region Component Methods 
 
 	void Start() {
 		index = 0;
@@ -201,7 +227,11 @@ public class Telephone : MonoBehaviour {
 		}
 
 	}
+	#endregion
 
+	/// <summary>
+	/// Enum states for all phone types
+	/// </summary>
 	public enum phoneTypes {
 		OutroRinging = 1,
 		Outro = 2,
