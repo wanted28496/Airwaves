@@ -311,6 +311,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8595353105090960664, guid: 63c231be91dbaa84ab8ff02c35e4b035,
+        type: 3}
+      propertyPath: portName
+      value: COM4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c231be91dbaa84ab8ff02c35e4b035, type: 3}
 --- !u!1001 &561863711
@@ -1643,15 +1648,15 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4292988430262068554, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2501764815565240176, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4292988430262068554, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4, type: 3}

@@ -5,6 +5,7 @@ using System.IO;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
+using System;
 
 public class CSVManager : MonoBehaviour {
 
@@ -232,6 +233,10 @@ public class CSVManager : MonoBehaviour {
 				float.TryParse(fields[17].ToString(), out B);
 				c.childText.color = new Color(R, G, B);
 				c.enigmaInput.maxSetting = 10;
+				c.enigmaInput.minSetting = -10;
+				//System.Random rng = new System.Random();
+				c.enigmaInput.correctSettingLeft = Convert.ToInt32(UnityEngine.Random.Range(-10, 10));
+				c.enigmaInput.correctSettingRight = Convert.ToInt32(UnityEngine.Random.Range(-10, 10));
 				///TODO::Randomized the correct value for left and right input
 				//c.childText.enabled = true;
 				//c.child.transform.

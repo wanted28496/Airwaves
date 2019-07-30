@@ -49,7 +49,7 @@ public class Channel : MonoBehaviour {
 		if (this.GetComponent<VideoPlayer>() != null) {
 			vidp = this.GetComponent<VideoPlayer>();
 		}
-		antm = GameObject.Find("AntennaeManager").GetComponent<AntennaeManager>();
+		antm = GameObject.Find("AntennaeManagerc").GetComponent<AntennaeManager>();
 
 	}
 	private void OnEnable() {
@@ -80,10 +80,14 @@ public class Channel : MonoBehaviour {
 		//float totalRDiff = Mathf.Abs(RDiff.x) + Mathf.Abs(RDiff.y);
 		//float totalLDiff = Mathf.Abs(LDiff.x) + Mathf.Abs(LDiff.y);
 		//float diffPercent = 0;
-
+		float antenaLeft = 0;
+		float antenaRight = 0;
 		//Using FLoat Values for potentiometer Dialers
-		float antenaLeft = antm.leftPos;
-		float antenaRight = antm.rightPos;
+		if (antm != null) {
+			antenaLeft = antm.leftPos;
+			antenaRight = antm.rightPos;
+		}
+		
 
 
 		float rDiff = rightValue - antenaRight;

@@ -8,8 +8,8 @@ public class EnigmaText : MonoBehaviour {
 
 	#region Serialize Inputs
 	[SerializeField] TextMeshPro tex;
-	[SerializeField] int correctSettingLeft;
-	[SerializeField] int correctSettingRight;
+	[SerializeField] public int correctSettingLeft;
+	[SerializeField] public int correctSettingRight;
 	[SerializeField] int currentSettingLeft = 5;
 	[SerializeField] int currentSettingRight = 5;
 	[SerializeField] public int minSetting, maxSetting;

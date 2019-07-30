@@ -153,6 +153,7 @@ public class InputCallback : MonoBehaviour {
 		for (int i = 0; i < infoLength[0]; i++) {
 			info[i] -= 512.0f;
 			info[i] *= 0.00195f;
+			Debug.Log(i + "   :   " + info[i]);
 		}
 	}
 	private void ResetInfo() {

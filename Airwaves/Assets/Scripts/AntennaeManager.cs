@@ -103,9 +103,9 @@ public class AntennaeManager : MonoBehaviour {
 		}
 		//leftText.text = "Left Pos: " + leftCurrentValue + ":" + rightCurrentValue;
 		//Debug.Log(leftText.text);
-		if (Input.GetButtonDown("lock")) {
-			canMove = (canMove) ? false : true;
-		}
+		//if (Input.GetButtonDown("lock")) {
+		//	canMove = (canMove) ? false : true;
+		//}
 	}
 	#endregion
 }

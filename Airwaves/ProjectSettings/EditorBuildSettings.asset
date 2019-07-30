@@ -8,4 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/ArcadeDemo.unity
+    guid: 1ff8bdc7faec95a4da08698fa5268415
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 009861879d5b2774e9e753c8c619ef3f
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 92df989801a3845418bd0a69fafb17f8
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 2b481a1b82ead4b44b0493fd61192987
+  - enabled: 1
+    path: Assets/Scenes/FinaleScene.unity
+    guid: f1e1de867b4432a48865615eab26dfad
   m_configObjects: {}

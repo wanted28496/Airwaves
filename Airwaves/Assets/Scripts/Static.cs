@@ -44,7 +44,7 @@ public class Static : MonoBehaviour {
 		scale = Random.Range(scaleMin, scaleMax);
 		CalcNoise();
 		source.volume = GetMaxOpacity();
-		if (Input.GetKeyDown(KeyCode.W)) {
+		if (Input.GetKeyDown(KeyCode.Space)) {
 			SceneManager.LoadScene(2);
 		}
 
