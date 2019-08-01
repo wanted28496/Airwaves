@@ -38,8 +38,15 @@ public class CSVManager : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Awake() {
-		code = new int[5][];
-		for (int i = 0; i < 5; i++) {
+		int length;
+		if(SkipLevel.isDemo) {
+			code = new int[1][];
+			length = 0;
+		} else {
+			code = new int[5][];
+			length = 5;
+		}
+		for (int i = 0; i < length; i++) {
 			code[i] = new int[4];
 		}
 		foreach (var channel in channelsGameObject) {

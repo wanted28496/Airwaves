@@ -34,7 +34,7 @@ public class TelephoneFinal : MonoBehaviour {
 	private string correctCode = "4965438847";
 
 	private int index;
-	private const int maxLenght = 4;
+	private const int maxLenght = 5;
 	private IsSpriteChangeAble changeChannel = IsSpriteChangeAble.canChange;
 
 	private AudioClip wrongAudio;
@@ -187,7 +187,9 @@ public class TelephoneFinal : MonoBehaviour {
 			} else if (Extras.introOutroIndex == 3) {
 				Extras.introOutroIndex++;
 				RingBeforeIntro();
-			} else if (Extras.introOutroIndex >= 4) {
+			} else if (Extras.introOutroIndex == 4) {
+				RingBeforeIntro();
+			} else if (Extras.introOutroIndex >= 5) {
 				Extras.introOutroIndex = 0;
 				presentType = phoneTypesFinal.End;
 			} else {

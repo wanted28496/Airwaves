@@ -40,7 +40,7 @@ public class CodeChecker : MonoBehaviour {
 		}
 		this.gameObject.GetComponent<Text>().text = currentCode;
 		if (finalLevel == 0) {
-			finalLevel = 2;
+			finalLevel = 1;
 		}
 	}
 
@@ -86,7 +86,11 @@ public class CodeChecker : MonoBehaviour {
 							currentCode = "____";
 							this.gameObject.GetComponent<Text>().text = currentCode;
 						} else {
-							SceneManager.LoadScene(4);
+							if(!SkipLevel.isDemo) {
+								SceneManager.LoadScene(4);
+							} else {
+								SceneManager.LoadScene(3);
+							}
 						}
 					} else {
 						attempts++;

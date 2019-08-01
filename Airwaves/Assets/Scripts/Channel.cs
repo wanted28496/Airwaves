@@ -28,10 +28,10 @@ public class Channel : MonoBehaviour {
 	#region Private Variable
 	[SerializeField] public bool video;
 	[SerializeField] public bool text;
-	private AntennaeManager antm;
+	[SerializeField] private AntennaeManager antm;
 	private float diffMod = 1.0f;
 
-	private GameObject stat;
+	[SerializeField] private GameObject stat;
 	#endregion
 
 
@@ -41,7 +41,7 @@ public class Channel : MonoBehaviour {
 
 
 
-		stat = GameObject.Find("Static");
+		//stat = GameObject.Find("Static");
 
 		if (this.GetComponent<Image>() != null) {
 			img = this.GetComponent<Image>();
@@ -49,7 +49,7 @@ public class Channel : MonoBehaviour {
 		if (this.GetComponent<VideoPlayer>() != null) {
 			vidp = this.GetComponent<VideoPlayer>();
 		}
-		antm = GameObject.Find("AntennaeManagerc").GetComponent<AntennaeManager>();
+		//antm = GameObject.Find("AntennaeManagerc").GetComponent<AntennaeManager>();
 
 	}
 	private void OnEnable() {

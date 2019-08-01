@@ -314,6 +314,16 @@ PrefabInstance:
       propertyPath: m_fontColor.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &287232062 stripped
@@ -500,6 +510,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &436808284 stripped
@@ -1109,6 +1129,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &886023662 stripped
@@ -1562,6 +1592,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &1033236839 stripped
@@ -1914,6 +1954,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &1452775050 stripped
@@ -2199,6 +2249,16 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &1659314906 stripped
@@ -2390,6 +2450,16 @@ PrefabInstance:
       propertyPath: m_textAlignment
       value: 258
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1 &1846525319 stripped
@@ -2667,6 +2737,16 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 472724551}
+    - target: {fileID: 1932981393031313618, guid: 44b1f6cc4f76d3445a416f95ed8389d8,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 1381750859}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b1f6cc4f76d3445a416f95ed8389d8, type: 3}
 --- !u!1001 &4036772150250839621
@@ -2739,7 +2819,7 @@ PrefabInstance:
     - target: {fileID: 8595353105090960664, guid: 63c231be91dbaa84ab8ff02c35e4b035,
         type: 3}
       propertyPath: portName
-      value: COM4
+      value: COM6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c231be91dbaa84ab8ff02c35e4b035, type: 3}

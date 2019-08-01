@@ -314,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 8595353105090960664, guid: 63c231be91dbaa84ab8ff02c35e4b035,
         type: 3}
       propertyPath: portName
-      value: COM4
+      value: COM6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63c231be91dbaa84ab8ff02c35e4b035, type: 3}
@@ -516,6 +516,16 @@ PrefabInstance:
       propertyPath: video
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7740362006322996009, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 399750399}
+    - target: {fileID: 7740362006322996009, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 1564935920}
     - target: {fileID: 3043312018731209674, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
         type: 3}
       propertyPath: m_TargetCamera
@@ -1634,6 +1644,16 @@ PrefabInstance:
       propertyPath: video
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7740362006322996009, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 399750399}
+    - target: {fileID: 7740362006322996009, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 1564935920}
     - target: {fileID: 3043312018731209674, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
         type: 3}
       propertyPath: m_TargetCamera
@@ -1967,6 +1987,8 @@ MonoBehaviour:
   diff: 1
   video: 0
   text: 1
+  antm: {fileID: 399750399}
+  stat: {fileID: 1564935920}
 --- !u!114 &1522734185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2578,6 +2600,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7740362006322996009, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: antm
+      value: 
+      objectReference: {fileID: 399750399}
+    - target: {fileID: 7740362006322996009, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
+        type: 3}
+      propertyPath: stat
+      value: 
+      objectReference: {fileID: 1564935920}
     - target: {fileID: 3043312018731209674, guid: f0fb11b1dfe45bd4aa60d263f86c9eb4,
         type: 3}
       propertyPath: m_TargetCamera
