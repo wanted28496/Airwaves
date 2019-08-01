@@ -180,10 +180,14 @@ public class TelephoneFinal : MonoBehaviour {
 		if (!InputCallback.If_Phone && presentType == phoneTypesFinal.Intro) {
 			audioSource.Stop();
 			staticComponentAudioSource.volume = 1.0f;
+
 			if (Extras.introOutroIndex == 3 && SideB.america && SideB.cuba && SideB.russia) {
 				RingBeforeIntro();
 				sideBChannel.SetActive(true);
-			} else if (Extras.introOutroIndex >= 3) {
+			} else if (Extras.introOutroIndex == 3) {
+				Extras.introOutroIndex++;
+				RingBeforeIntro();
+			} else if (Extras.introOutroIndex >= 4) {
 				Extras.introOutroIndex = 0;
 				presentType = phoneTypesFinal.End;
 			} else {

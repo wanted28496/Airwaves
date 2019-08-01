@@ -37,15 +37,20 @@ public class ArcadeDemo : MonoBehaviour {
 			SkipLevel.level = 3;
 		} else if (Input.inputString == "F" || Input.inputString == "f") {
 			final = true;
+		} else if(Input.inputString == "D" || Input.inputString == "d" || Input.GetKeyDown(KeyCode.KeypadPlus)) {
+			SkipLevel.level = 0;
+			SkipLevel.isDemo = true;
 		} else {
 			SkipLevel.level = 0;
 		}
 
 
-		if (Input.inputString != "" && !final) {
+		if (Input.inputString != "" && !final && !SkipLevel.isDemo) {
 			SceneManager.LoadScene(1);
 		} else if (Input.inputString != "" && final) {
 			SceneManager.LoadScene(4);
+		} else if(Input.inputString != "" && SkipLevel.isDemo) {
+			SceneManager.LoadScene(5);
 		}
 
 		lastELeftInput = InputCallback.info[0];

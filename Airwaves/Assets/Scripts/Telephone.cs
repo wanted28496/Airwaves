@@ -78,7 +78,12 @@ public class Telephone : MonoBehaviour {
 		////Play Intro Sound
 		CodeChecker.level = level;
 		level += 1;
-		string audiuoFileName = ioAudioFileName + level.ToString() + "Intro";
+		string audiuoFileName;
+		if (SkipLevel.isDemo) {
+			audiuoFileName = "Audio/DemoIntro";
+		} else {
+			audiuoFileName = ioAudioFileName + level.ToString() + "Intro";
+		}
 		audioSource.PlayOneShot(Resources.Load<AudioClip>(audiuoFileName));
 		presentType = phoneTypes.Intro;
 	}
@@ -89,7 +94,13 @@ public class Telephone : MonoBehaviour {
 	/// </summary>
 	public void PlayOutro() {
 		////Playing Outro Sound
-		string audiuoFileName = ioAudioFileName + level.ToString() + "Outro";
+		string audiuoFileName;
+		if (SkipLevel.isDemo) {
+			audiuoFileName = "Audio/DemoOutro";
+		} else {
+			audiuoFileName = ioAudioFileName + level.ToString() + "Outro";
+		}
+
 		audioSource.PlayOneShot(Resources.Load<AudioClip>(audiuoFileName));
 		presentType = phoneTypes.Outro;
 	}
@@ -206,9 +217,6 @@ public class Telephone : MonoBehaviour {
 			if (telephoneDirectory.ContainsKey(currentCode)) {
 				if (currentCode == "3632559277") {
 					SideB.cuba = true;
-					Debug.Log("America: " + SideB.america);
-					Debug.Log("Cuba: " + SideB.cuba);
-					Debug.Log("Russia: " + SideB.russia);
 				}
 				audioSource.PlayOneShot(telephoneDirectory[currentCode]);
 				currentCode = "";

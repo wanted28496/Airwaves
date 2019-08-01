@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class SkipLevel {
 	public static int level = 0;
-
+	public static bool isDemo = false;
 }
 
 
