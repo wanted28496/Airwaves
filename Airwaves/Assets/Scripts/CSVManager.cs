@@ -233,7 +233,7 @@ public class CSVManager : MonoBehaviour {
 				c.img.enabled = true;
 				c.text = true;
 				c.childText.fontSize = int.Parse(fields[14].ToString());
-				c.child.GetComponent<RectTransform>().sizeDelta = new Vector2(float.Parse(fields[14].ToString()), float.Parse(fields[15].ToString()));
+				//c.child.GetComponent<RectTransform>().sizeDelta = new Vector2(float.Parse(fields[14].ToString()), float.Parse(fields[15].ToString()));
 				float R, G, B;
 				float.TryParse(fields[15].ToString(), out R);
 				float.TryParse(fields[16].ToString(), out G);
@@ -244,6 +244,7 @@ public class CSVManager : MonoBehaviour {
 				//System.Random rng = new System.Random();
 				c.enigmaInput.correctSettingLeft = Convert.ToInt32(UnityEngine.Random.Range(-10, 10));
 				c.enigmaInput.correctSettingRight = Convert.ToInt32(UnityEngine.Random.Range(-10, 10));
+				c.childText.sortingOrder = 1;
 				///TODO::Randomized the correct value for left and right input
 				//c.childText.enabled = true;
 				//c.child.transform.

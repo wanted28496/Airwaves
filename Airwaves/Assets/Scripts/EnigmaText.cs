@@ -58,8 +58,10 @@ public class EnigmaText : MonoBehaviour {
 		//float valueRight = CheckForRightTriggerInput();
 		float valueLeft = InputCallback.info[0];
 		float valueRight = InputCallback.info[1];
-		int deltaLeft = Mathf.Abs(Mathf.RoundToInt((valueLeft * maxSetting)));
-		int deltaRight = Mathf.Abs(Mathf.RoundToInt((valueRight * maxSetting)));
+		Debug.Log("value" + valueLeft);
+		Debug.Log("value Right" + valueRight);
+		int deltaLeft = Mathf.RoundToInt((valueLeft * maxSetting));
+		int deltaRight = Mathf.RoundToInt((valueRight * maxSetting));
 		currentSettingLeft = Mathf.Clamp(deltaLeft, minSetting, maxSetting);
 		//Debug.Log("Left Enigma Dialer: " + currentSettingLeft);
 		//Debug.Log("Right Enigma Dialer: " + currentSettingRight);

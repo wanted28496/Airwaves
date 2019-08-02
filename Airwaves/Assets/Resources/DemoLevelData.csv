@@ -1,7 +1,7 @@
-level, channel#, channelType,channelLocation,ExtraAsset, Telephone,TelephoneAudio, containsCode, code value, code position, RIGHT.X,RIGHT.Y, LEFT.X, LEFT.Y,Width,Height,Font Size,R,G,B
-1,1,Text,Images/RussiaChannel2,Text/l4c2,NULL,NULL,TRUE,2,1,-6,-1,3,1,50,700,150,0.45,0.23,0.17
-1,2,Video,Videos/CubaChannel7,Audio/CC7,3468437249,Audio/Level2_Call3,TRUE,2,4,-7,2,2,7,NULL,NULL,NULL,NULL,NULL,NULL
-1,3,Image,Images/CubaChannel1,NULL,7134589876,Audio/Level2_Call1,TRUE,4,2,4,-2,2,1,NULL,NULL,NULL,NULL,NULL,NULL
-1,4,Image,Images/CubaChannel2,NULL,NULL,NULL,TRUE,4,2,4.5,-1.5,2,2,NULL,NULL,NULL,NULL,NULL,NULL
-1,5,Image,Images/Five1,NULL,NULL,NULL,TRUE,5,3,2,-2.5,1,6,NULL,NULL,NULL,NULL,NULL,NULL
-1,6,Image,Images/Five2,NULL,NULL,NULL,TRUE,5,3,2.5,-2,1,7,NULL,NULL,NULL,NULL,NULL,NULL
+level, channel#, channelType,channelLocation,ExtraAsset, Telephone,TelephoneAudio, containsCode, code value, code position, RIGHT.X,RIGHT.Y, LEFT.X, LEFT.Y,Font Size,R,G,B,Side B
+1,1,Text,Images/RussiaChannel2,Text/l4c2,NULL,NULL,TRUE,2,1,-6,-1,3,1,1000,0.45,0.23,0.17,NULL
+1,2,Video,Videos/CubaChannel7,Audio/CC7,3468437249,Audio/Level2_Call3,TRUE,2,4,-7,2,2,7,NULL,NULL,NULL,NULL,NULL
+1,3,Image,Images/CubaChannel1,NULL,7134589876,Audio/Level2_Call1,TRUE,4,2,4,-2,2,1,NULL,NULL,NULL,NULL,NULL
+1,4,Image,Images/CubaChannel2,NULL,NULL,NULL,TRUE,4,2,4.5,-1.5,2,2,NULL,NULL,NULL,NULL,NULL
+1,5,Image,Images/Five1,NULL,NULL,NULL,TRUE,5,3,2,-2.5,1,6,NULL,NULL,NULL,NULL,NULL
+1,6,Image,Images/Five2,NULL,NULL,NULL,TRUE,5,3,2.5,-2,1,7,NULL,NULL,NULL,NULL,NULL
