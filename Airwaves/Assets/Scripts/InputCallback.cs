@@ -162,11 +162,14 @@ public class InputCallback : MonoBehaviour {
 			info[i] *= 0.00195f;
 			Debug.Log(i + "   :   " + info[i]);
 		}
-        enigma0.text = info[0].ToString();
-        enigma1.text = info[1].ToString();
-        antenna0.text = info[2].ToString();
-        antenna1.text = info[3].ToString();
-    }
+		//If only it is set (currently only set in demo scene)
+		if (enigma0) {
+			enigma0.text = info[0].ToString();
+			enigma1.text = info[1].ToString();
+			antenna0.text = info[2].ToString();
+			antenna1.text = info[3].ToString();
+		}
+	}
 	private void ResetInfo() {
 		for (int i = 0; i < infoLength[0]; i++) {
 			info[i] = 0;
