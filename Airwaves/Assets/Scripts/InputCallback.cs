@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class InputCallback : MonoBehaviour {
-	[Tooltip("The data from Enigma Machine")]
+
+    [Header("UI Elements")]
+    public TextMeshProUGUI enigma0;
+    public TextMeshProUGUI enigma1;
+    public TextMeshProUGUI antenna0;
+    public TextMeshProUGUI antenna1;
+
+    [Tooltip("The data from Enigma Machine")]
 	public static float[] info;
 	[Tooltip("The data from Antenna")]
 	public float[] info_Antenna_left;
@@ -155,7 +162,11 @@ public class InputCallback : MonoBehaviour {
 			info[i] *= 0.00195f;
 			Debug.Log(i + "   :   " + info[i]);
 		}
-	}
+        enigma0.text = info[0].ToString();
+        enigma1.text = info[1].ToString();
+        antenna0.text = info[2].ToString();
+        antenna1.text = info[3].ToString();
+    }
 	private void ResetInfo() {
 		for (int i = 0; i < infoLength[0]; i++) {
 			info[i] = 0;
